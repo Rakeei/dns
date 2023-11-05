@@ -8,5 +8,5 @@ EXPOSE 53/udp
 EXPOSE 80
 EXPOSE 443
 ENV IP SERVER_IP
-    sed "s/{IP}/${IP}/" /etc/dnsmasq.tpl > /etc/dnsmasq.conf && \
-    dnsmasq -khR & sniproxy -c /etc/sniproxy.conf -f
+CMD sed "s/{IP}/${IP}/" /etc/dnsmasq.tpl > /etc/dnsmasq.conf && \
+dnsmasq -khR & sniproxy -c /etc/sniproxy.conf -f
